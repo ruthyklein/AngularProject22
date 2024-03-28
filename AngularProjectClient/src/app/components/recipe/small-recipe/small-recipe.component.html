@@ -1,0 +1,38 @@
+<mat-card class="example-card" >
+    <mat-card-header>
+        <mat-icon>{{this.icon}}</mat-icon>
+
+        <mat-card-title><b>{{ recipe.recipeName }}</b></mat-card-title>
+
+        <mat-card-subtitle>By {{createdByUsername}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image src={{recipe.imageUrl}} class="img-recipe" (click)="toRecipeDetails()">
+
+    <mat-card-content>
+        <div class="details">
+            <p>
+                <mat-icon matSuffix>timer</mat-icon>
+
+                {{ recipe.preparationTimeInMinutes| preparationTime }}
+            </p>
+            <p>{{recipe.creationDate.toString().slice(0,10)}}</p>
+
+        </div>
+        <span *ngFor="let icon of recipe.difficultyLevel | difficultyLevel " class="icon-category">
+            <mat-icon>{{ icon }}</mat-icon>
+        </span>
+
+    </mat-card-content>
+    
+    <div class="btnDiv">
+        <mat-card-actions>
+            <button mat-button class="btnCard" (click)="deleteRecipe()">Delete</button>
+        </mat-card-actions>
+
+        <mat-card-actions>
+            <button mat-button class="btnCard" (click)="editRecipe()">Edit</button>
+        </mat-card-actions>
+    </div>
+
+</mat-card>

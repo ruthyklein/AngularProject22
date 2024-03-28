@@ -1,0 +1,55 @@
+<div class="search-container">
+
+    <button class="btn filterBtn" type="button" (click)="sidebarVisible = true">
+        Filter
+        <mat-icon>filter_list</mat-icon>
+    </button>
+
+
+    <div class="search-input">
+        <input autocomplete="on" type="search" class="form-control searchInput" [(ngModel)]="searchTerm"
+            (ngModelChange)="searchRecipes()" placeholder="Type something... " />
+        <button class="btn searchBtn" type="button" (click)="searchRecipes()">
+            <mat-icon>search</mat-icon>
+                </button>
+    </div>
+
+</div>
+
+<div *ngIf="isLoading" class="spinner-grow" role="status" style="width:6rem; height: 6rem; color:white  ">
+    <span class="visually-hidden">Loading...</span>
+</div>
+
+<div class="allRecipesContainer" *ngIf="!isLoading">
+    <div class="allRecipesCards">
+        <div *ngFor="let recipe of filteredRecipes">
+            <app-small-recipe [recipe]="recipe"></app-small-recipe>
+        </div>
+    </div>
+
+</div>
+
+<p-sidebar [(visible)]="sidebarVisible" color="warn" class="side">
+    <div class="sideBar">
+        <div class="filterContainer">
+            <p>Duration of preparation in minutes:</p>
+            <mat-slider color="warn" class="custom-slider" min="5" max="180" step="5" showTickMarks discrete style="width: 90%;">
+                <input matSliderThumb [(ngModel)]="selectedPreparationTime">
+            </mat-slider>
+            <p>Categories:</p>
+            <div>
+                <div>
+                    <div class="filter-category">
+                        <mat-checkbox color="warn" *ngFor="let category of categories"
+                            [(ngModel)]="selectedCategories[category.id.toString()]">
+                            {{ category.name }}
+                        </mat-checkbox>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn" type="button" (click)="filterRecipes()">
+            Filter Recipes
+        </button>
+    </div>
+</p-sidebar>

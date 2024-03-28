@@ -1,0 +1,52 @@
+.example-card {
+  width: 270px;
+   height: 430px;
+   display: flex;
+   color: black;
+   justify-content: space-around;
+   border: 2px solid rgba(0, 0, 0, 0.636);
+   box-shadow: 5px 5px 5px rgb(255 255 255 / 52%);
+   margin: 10px; 
+ }
+
+.btnCard {
+  background-color:#a77325db;
+}
+
+
+.img-recipe {
+  height: 50%;
+}
+
+.mat-mdc-card-header {
+  justify-content: space-between;
+
+
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+
+
+}
+.recipesContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.allRecipes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.filterButtonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; 
+}
+.btnDiv{
+  display: flex;
+}

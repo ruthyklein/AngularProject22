@@ -1,0 +1,70 @@
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: Black;
+
+  .top-spacer {
+    height: 25px;
+    color: #a77325db;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .Remove orange {
+    color: #000;
+    background-color: white;
+  }
+
+  .navbar {
+    height: 80px;
+    background-color: #a77325db;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    .navbar-nav .nav-item .mat-icon,
+    .mat-chip button.mat-icon-button {
+      color: black;
+    }
+
+    .navbar-brand {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      align-content: center;
+      flex-direction: row;
+    }
+  }
+
+  .logo {
+    width: 10vw;
+    margin: 5px 0;
+  }
+
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    color: #000;
+    font-weight: bold;
+    background-color: rgb(143 99 32);
+
+    
+  }
+  .nav-item {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      color: rgb(143 99 32);
+    }
+  }
+}
+
+
+.navbar-nav:hover {
+  color: #ffffff;
+}
