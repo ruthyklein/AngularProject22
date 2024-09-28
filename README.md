@@ -2,6 +2,7 @@
 ## Recipe Management Application
 
 ![Recipe Management](/src/assets/recipesimg.jpg)
+![Recipe Management](AngularProjectClient/src/assets/recipesimg.jpg)
 
 ## Description
 
